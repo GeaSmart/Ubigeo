@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Ubigeos.Domain/Ubigeos.Domain.csproj" />
+    <Project Path="src/Ubigeos.Infrastructure/Ubigeos.Infrastructure.csproj" />
+    <Project Path="src/Ubigeos.Api/Ubigeos.Api.csproj" />
+    <Project Path="src/Ubigeos.Application/Ubigeos.Application.csproj" />
+  </Folder>
+</Solution>
