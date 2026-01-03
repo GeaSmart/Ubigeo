@@ -1,4 +1,6 @@
-﻿using Ubigeos.Domain;
+﻿using Ubigeos.Application.Dtos;
+using Ubigeos.Application.Mappings;
+using Ubigeos.Domain;
 
 namespace Ubigeos.Application;
 
@@ -11,12 +13,18 @@ public class UbigeosService : IUbigeosService
         _repository = repository;
     }
 
-    public Task<IReadOnlyList<Ubigeo>> GetByParentAsync(
+    public async Task<IReadOnlyList<UbigeoItemDto>> GetByParentAsync(
         int parentId,
-        CancellationToken cancellationToken = default)
-        => _repository.GetByParentAsync(parentId, cancellationToken);
+        CancellationToken cancellationToken)
+    {
+        var entities = await _repository.GetByParentAsync(parentId, cancellationToken);
+        return entities.Select(x => x.ToItemDto()).ToList();
+    }
 
-    public Task<IReadOnlyList<Ubigeo>> GetTreeAsync(
-        CancellationToken cancellationToken = default)
-        => _repository.GetTreeAsync(cancellationToken);
+    public async Task<IReadOnlyList<UbigeoTreeDto>> GetTreeAsync(
+    CancellationToken cancellationToken)
+    {
+        var entities = await _repository.GetTreeAsync(cancellationToken);
+        return entities.Select(x => x.ToTreeDto()).ToList();
+    }
 }

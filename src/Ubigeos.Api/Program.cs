@@ -10,13 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-     {
-         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-         options.JsonSerializerOptions.MaxDepth = 64; // Aumentar profundidad si es necesario
-         options.JsonSerializerOptions.WriteIndented = true; // Opcional, para debugging
-     });
+builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
