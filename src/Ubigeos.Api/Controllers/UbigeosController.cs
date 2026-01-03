@@ -5,14 +5,8 @@ namespace Ubigeos.Api.Controllers;
 
 [ApiController]
 [Route("api/ubigeos")]
-public class UbigeosController : ControllerBase
+public class UbigeosController(IUbigeosService ubigeosService) : ControllerBase
 {
-    private readonly IUbigeosService _ubigeosService;
-
-    public UbigeosController(IUbigeosService ubigeosService)
-    {
-        _ubigeosService = ubigeosService;
-    }
 
     /// <summary>
     /// Obtiene los ubigeos hijos de un ubigeo padre.
@@ -24,7 +18,7 @@ public class UbigeosController : ControllerBase
         int parentId,
         CancellationToken cancellationToken)
     {
-        var result = await _ubigeosService.GetByParentAsync(
+        var result = await ubigeosService.GetByParentAsync(
             parentId,
             cancellationToken);
 
@@ -39,7 +33,7 @@ public class UbigeosController : ControllerBase
     public async Task<IActionResult> GetTree(
         CancellationToken cancellationToken)
     {
-        var result = await _ubigeosService.GetTreeAsync(cancellationToken);
+        var result = await ubigeosService.GetTreeAsync(cancellationToken);
 
         return Ok(result);
     }

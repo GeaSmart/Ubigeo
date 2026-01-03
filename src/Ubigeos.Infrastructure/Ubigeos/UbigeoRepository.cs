@@ -3,20 +3,13 @@ using Ubigeos.Domain;
 
 namespace Ubigeos.Infrastructure.Ubigeos;
 
-public class UbigeosRepository : IUbigeosRepository
+public class UbigeosRepository(ApplicationDbContext context) : IUbigeosRepository
 {
-    private readonly ApplicationDbContext _context;
-
-    public UbigeosRepository(ApplicationDbContext context)
-    {
-        _context = context;
-    }
-
     public async Task<IReadOnlyList<Ubigeo>> GetByParentAsync(
         int parentId,
         CancellationToken cancellationToken = default)
     {
-        return await _context.Set<Ubigeo>()
+        return await context.Set<Ubigeo>()
             .Where(x => x.ParentId == parentId)
             .OrderBy(x => x.Name)
             .AsNoTracking()
@@ -26,7 +19,7 @@ public class UbigeosRepository : IUbigeosRepository
     public async Task<IReadOnlyList<Ubigeo>> GetTreeAsync(
         CancellationToken cancellationToken = default)
     {
-        return await _context.Set<Ubigeo>()
+        return await context.Set<Ubigeo>()
             .Where(x => x.Level == UbigeoLevel.Department)
             .Include(x => x.Children)
                 .ThenInclude(x => x.Children)
