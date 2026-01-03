@@ -1,4 +1,6 @@
-﻿namespace Ubigeos.Domain;
+﻿using Ubigeos.Domain.Ubigeos;
+
+namespace Ubigeos.Domain.Interfaces;
 
 public interface IUbigeosRepository
 {

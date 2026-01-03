@@ -1,8 +1,8 @@
 ﻿using Ubigeos.Application.Dtos;
 using Ubigeos.Application.Mappings;
-using Ubigeos.Domain;
+using Ubigeos.Domain.Interfaces;
 
-namespace Ubigeos.Application;
+namespace Ubigeos.Application.Ubigeos;
 
 public class UbigeosService : IUbigeosService
 {

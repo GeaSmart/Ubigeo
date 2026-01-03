@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Ubigeos.Domain;
+using Ubigeos.Domain.Interfaces;
+using Ubigeos.Domain.Ubigeos;
 
 namespace Ubigeos.Infrastructure.Ubigeos;
 

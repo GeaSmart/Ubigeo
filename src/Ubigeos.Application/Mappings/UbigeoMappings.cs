@@ -1,5 +1,5 @@
 ﻿using Ubigeos.Application.Dtos;
-using Ubigeos.Domain;
+using Ubigeos.Domain.Ubigeos;
 
 namespace Ubigeos.Application.Mappings;
 

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Ubigeos.Application;
+using Ubigeos.Application.Ubigeos;
 
 namespace Ubigeos.Api.Controllers;
 

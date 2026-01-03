@@ -1,4 +1,4 @@
-﻿namespace Ubigeos.Domain;
+﻿namespace Ubigeos.Domain.Ubigeos;
 
 public enum UbigeoLevel
 {

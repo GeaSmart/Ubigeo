@@ -1,7 +1,6 @@
 ﻿using Ubigeos.Application.Dtos;
-using Ubigeos.Domain;
 
-namespace Ubigeos.Application;
+namespace Ubigeos.Application.Ubigeos;
 
 public interface IUbigeosService
 {

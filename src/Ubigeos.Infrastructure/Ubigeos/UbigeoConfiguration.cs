@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Ubigeos.Domain;
+using Ubigeos.Domain.Ubigeos;
 
 namespace Ubigeos.Infrastructure.Ubigeos;
 
